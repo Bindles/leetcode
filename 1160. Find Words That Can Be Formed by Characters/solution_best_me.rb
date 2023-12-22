@@ -1,3 +1,15 @@
+#TALLY|MY-SOLUTION|BRACKET
+def count_characters(words, chars)
+  a=0
+  words.each do |word|
+    if word.each_char.tally.all? { |char, count| chars.each_char.tally[char].to_i >= count }
+      a+=word.length
+    end
+  end
+  puts a
+end
+count_characters(["cat","bt","hat","tree"], "atach")
+#TALLY|MY-SOLUTION|PUTS|BRACKET
 def count_characters2(words, chars)
   words.each do |word|
     if word.each_char.tally.all? { |char, count| chars.each_char.tally[char].to_i >= count }
@@ -7,7 +19,7 @@ def count_characters2(words, chars)
 end
 count_characters2(["cat","bt","hat","tree"], "atach")
 
-
+#TALLY|MY-SOLUTION|DEBUGGING|NO-BRACKET-LONG
 def ccc(words, chars)
   a=0
   words.each do |word|

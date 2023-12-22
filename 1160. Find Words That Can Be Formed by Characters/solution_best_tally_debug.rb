@@ -12,13 +12,13 @@ answer_length=0
       answer_length+=word.length
     end
   end
-  return answer_length
+  puts answer_length
 end
 
 ccdebug(["cat", "bt", "hat", "tree"], "atach")
 
 
-#TALLY|MY-SOLUTION|DEBUGGING|NO-BRACKET-LONG
+#TALLY|MY-SOLUTION|NO-BRACKET-LONG
 def count_characters(words, chars)
 answer_length=0
   words.each do |word|
@@ -29,7 +29,7 @@ answer_length=0
       answer_length+=word.length
     end
   end
-  return answer_length
+  puts answer_length
 end
 
 count_characters(["cat", "bt", "hat", "tree"], "atach")
