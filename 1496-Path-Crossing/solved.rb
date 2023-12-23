@@ -25,3 +25,4 @@ def is_path_crossing(path="NESWW")
 end
 
 puts is_path_crossing
+
