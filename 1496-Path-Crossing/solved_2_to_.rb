@@ -35,7 +35,7 @@ def is_path_crossing(path)
     false
 end
 
-# Example usage:
+
 path = "NES"
 result = is_path_crossing(path)
 puts "Result: #{result}"
