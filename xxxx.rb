@@ -9,7 +9,7 @@ def combination_sum(candidates, target)
         end
     end
     
-    candidates.each.wint_index do |a, ind|
+    candidates.each.with_index do |a, ind|
         candidates.each.with_index do |cand, index|
             unless cand == candidates[ind]
                 p candidates
