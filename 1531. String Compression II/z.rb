@@ -5,8 +5,9 @@ s.each_char do |char|
   char_count[char] += 1
 end
 
-p "here"
+p "char count ---"
 p char_count
+p "---"
 
 z=0
 result=""
