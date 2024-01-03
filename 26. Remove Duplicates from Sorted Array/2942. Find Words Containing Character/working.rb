@@ -15,4 +15,4 @@ def find_words_containing(words = ["leet","code", "sa"], x = "e")
   return result
 end
 
-p find_words_containing
+find_words_containing
