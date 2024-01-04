@@ -17,4 +17,4 @@ def decode_message(key = "the quick brown fox jumps over the lazy dog", message 
 return result.join
 end
 
-decode_message
+p decode_message
