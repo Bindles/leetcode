@@ -1,3 +1,4 @@
+#optimal-not mine:
 def find_content_children(g, s)
   g.sort!
   s.sort.inject(0) {|count,size|
