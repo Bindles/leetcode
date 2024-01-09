@@ -1,3 +1,4 @@
+#MY SOLUTION #2 NO HASHMAP JUST ARRAY
 def sort_people(names = ["Alice","Bob","Bob", "Bob"], heights = [155,185,150, 1])
     p "john emma mary"
     heights_sort = heights.sort
