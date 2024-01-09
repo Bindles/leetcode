@@ -13,7 +13,22 @@ def sort_people(names = ["Alice","Bob","Bob", "Bob"], heights = [155,185,150, 1]
         namer[a] = names[index] if h == heights_sort[a]
       end
     end
-    return namer.reverse
+    p namer, "result in reverse =>"
+    p namer.reverse
+end
+sort_people
+
+def sort_people(names = ["Alice","Bob","Bob", "Bob"], heights = [155,185,150, 1])
+    heights_sort = heights.sort
+    namer = []
+
+    heights.each.with_index do |h,index|
+      0..names.length.times do | a|
+        namer[a] = names[index] if h == heights_sort[a]
+      end
+    end
+    p namer, "result in reverse =>"
+    p namer.reverse
 end
 sort_people
 
