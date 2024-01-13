@@ -14,4 +14,8 @@ def search_insert(nums, target)
   end
 end
 
+def search_insert(nums=[1,3,4,6,8],target=5)  
+  nums.index{|n|n>=target}||nums.length
+end
 
+p search_insert
