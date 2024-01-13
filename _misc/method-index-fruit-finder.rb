@@ -15,3 +15,33 @@ end
 
 # Call the method
 fruit_index_finder
+
+def binarys(nums=[1,3,6,4,3,23,4,54,12], target=23)
+   nums.sort.bsearch {|n|n == target }
+end
+
+def binarys(nums=[1,3,6,4,3,23,4,54,12], target=23)
+  nums.sort.bsearch do |n|
+    p n
+  end
+end
+
+def binarys(nums = [1, 3, 3, 4, 4, 6, 12, 23, 54], target = 23)
+  nums.sort.bsearch do |n|
+    puts "Searching #{n}"
+    if n == target
+      puts "Found #{n}"
+      true
+    else
+      false
+    end
+  end
+end
+
+p binarys
+
+def binarysay(nums = [1, 3, 6, 4, 3, 23, 4, 54, 12], target = 23)
+  nums.sort.bsearch { |n| puts "Searching #{n}"; n == target && (puts "Found #{n}"; true) }
+end
+
+binarysay
