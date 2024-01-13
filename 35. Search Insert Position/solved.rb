@@ -13,3 +13,5 @@ def search_insert(nums, target)
       p nums.length
   end
 end
+
+
