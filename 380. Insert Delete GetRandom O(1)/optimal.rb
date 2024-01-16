@@ -1,3 +1,4 @@
+#4LINER
 class RandomizedSet
   attr_accessor :x  and def initialize = @x = {}
   def insert(val) = x[val] ? false : (x[val] = true; true)
@@ -5,6 +6,7 @@ class RandomizedSet
   def get_random = x.keys.sample
 end
 
+#READABLE LOL
 class RandomizedSet
   attr_accessor :x  
   def initialize = @x = {}
@@ -13,6 +15,7 @@ class RandomizedSet
   def get_random = x.keys.sample
 end
 
+#WEIRD LOOKING
 class RandomizedSet
   attr_accessor :x
   def initialize()
@@ -23,6 +26,7 @@ class RandomizedSet
   def get_random() = x.keys.sample
 end
 
+#ACTUALLY READABLE
 class RandomizedSet
   attr_accessor :x
   def initialize()
@@ -39,7 +43,7 @@ class RandomizedSet
   end
 end
 
-
+#REMOVE TERNARY
 class RandomizedSet
   attr_accessor :x
   def initialize()
