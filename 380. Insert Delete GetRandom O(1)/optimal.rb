@@ -40,7 +40,6 @@ class RandomizedSet
 end
 
 
-
 class RandomizedSet
   attr_accessor :x
   def initialize()
