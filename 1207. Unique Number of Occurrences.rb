@@ -12,10 +12,13 @@ def unique_occurrences(arr)
   p result.size ==  result.uniq.size
 end
 p unique_occurrences([1,2,2,1,1,3])
-
+#CONCISE
 def unique_occur(arr)
   arruniq, result = arr.uniq,[]
   arruniq.each {|a| result << arr.count(a)} && result.size == result.uniq.size
 end
-p unique_occurr([1,2,2,1,1,3])
+p unique_occur([1,2,2,1,1,3])
+
+
+
 
