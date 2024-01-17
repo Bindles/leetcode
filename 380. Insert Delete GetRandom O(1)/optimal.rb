@@ -1,3 +1,8 @@
+#1LINER
+class RandomizedSet
+  attr_accessor :x  and def initialize = @x = {} and def insert(val) = x[val] ? false : (x[val] = true; true) and def remove(val) = x[val] ? (x.delete(val); true) : false and def get_random = x.keys.sample
+end
+
 #4LINER
 class RandomizedSet
   attr_accessor :x  and def initialize = @x = {}
