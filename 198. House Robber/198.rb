@@ -1,4 +1,7 @@
-def rob(nums1 = [1, 2, 3, 1])
+# @param {Integer[]} nums
+# @return {Integer}
+#MY-SOLUTION
+def rob(nums = [1, 2, 3, 1])
   puts "Input array: #{nums}"
 
   return 0 if nums.empty?
