@@ -72,3 +72,4 @@ puts fuel_efficient_cars.map(&:model)
 # Output: ["Toyota", "Ford", "Tesla"]
 puts cars[1].model
 puts fuel_efficient_cars[0].mileage
+p cars.map(&:model)
