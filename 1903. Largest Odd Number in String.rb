@@ -13,9 +13,26 @@ end
 
 p largest_odd_number
 
+#MY_BETTER_SOLUTION
+def largest_odd_number(num="5322")
+  (num.length-1).downto(0).each do |i|
+      return num[0..i] if num[i].to_i.odd?
+  end
+  return ""
+end
+
+p largest_odd_number
+
+#ONE-LINER
+def largest_odd_number(num="5322")
+  (num.length-1).downto(0).each {|i| return num[0..i] if num[i].to_i.odd? } and return ""
+end
+
+p largest_odd_number
 
 
 #EARLY WORKING:
+
 def largest_odd_number(num = "5222")
   if num.to_i.odd?
     return num
@@ -32,8 +49,6 @@ def largest_odd_number(num = "5222")
   end
   return ""
 end
-
-
 
 def largest_odd_number(num = "5322")
   res=[]
