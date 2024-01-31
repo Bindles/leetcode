@@ -73,3 +73,21 @@ puts fuel_efficient_cars.map(&:model)
 puts cars[1].model
 puts fuel_efficient_cars[0].mileage
 p cars.map(&:model)
+
+
+array=[1,2,3,4]
+p array.map(&:even?)
+p array.map {|i| i+1}
+arrayz=["A","b"]
+p arrayz.map { |string| string.upcase }
+arrayx = ["11", "21", "5"]
+p arrayx.map { |str| str.to_i }
+# [11, 21, 5]
+p array.each { |n| p n+n}
+# [1, 2, 3]
+p array.map { |n| n * 2 }
+# [2, 4, 6]
+p arraya = %w(a b c)
+p arraya.map.with_index { |ch, idx| p [ch, idx] }
+p arraya.each.with_index { |ch, idx| p  [ch, idx] }
+p [1,"orange", "apple", "banana"].map(&:class)
