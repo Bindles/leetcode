@@ -1,3 +1,8 @@
+#ONE-LINER TO LEARN | NOT MINE:
+def divide_array(nums, k)
+  nums.sort.each_slice(3).to_a.each { |x| return [] if x.last-x.first > k }
+end
+
 #CONCISE
 def divide_array(nums = [1,3,4,8,7,9,3,5,1], k = 2)
   nums.sort!
