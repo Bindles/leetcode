@@ -11,3 +11,5 @@ deep_dive = Book.new("Ruby Deep Dive", "Jesus Castello")
 fun = Book.new("Fun With Programming", "White Cat")
 
 p deep_dive.title
+
+p [1,2,3].sample(2)
