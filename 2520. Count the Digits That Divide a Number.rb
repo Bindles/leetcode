@@ -17,6 +17,10 @@ p count_digits
 
 
 #MORE SELECT
+p %w[bear cat pigeon ant].select{|a| a.size < 5 }.sort_by(&:size).
+  map(&:upcase).join(', ')
+# => "CAT, ANT, BEAR"
+
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 prime_numbers = numbers.select do |num|
   next if num <= 1

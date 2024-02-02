@@ -91,3 +91,28 @@ p arraya = %w(a b c)
 p arraya.map.with_index { |ch, idx| p [ch, idx] }
 p arraya.each.with_index { |ch, idx| p  [ch, idx] }
 p [1,"orange", "apple", "banana"].map(&:class)
+
+def final_value_after_operations(operations = ["--X","X++","X++","X++"]) 
+  operations.map { |op| op.include?("++") ?  1 : -1}.sum
+end
+p final_value_after_operations
+p'--'
+
+def final_value_after_operations(operations = ["--X","X++","X++","X++"]) 
+  p abc =operations.map { |op| op.include?("++") ?  1 : -1}
+  abc.sum
+end
+p final_value_after_operations
+
+
+def final_value_after_operations(operations = ["--X","X++","X++","X++"]) 
+  operations.map { |op| op.include?("++") ? (p 1) : (p (-1))}.sum
+end
+p'--'
+p final_value_after_operations
+
+def final_value_after_operations(operations = ["--X","X++","X++","X++"]) 
+  operations.map { |op| op.include?("++") ?  1 : -1 }.tap { |result| puts result }.sum
+end
+
+final_value_after_operations
