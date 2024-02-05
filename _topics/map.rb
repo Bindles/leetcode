@@ -16,7 +16,7 @@ puts squared_numbers
 # Example 2: Convert an array of strings to uppercase.
 words = ["apple", "banana", "orange"]
 
-uppercase_words = words.map { |word| word.upcase }
+uppercase_words = words.select { |word| word.upcase }
 
 puts uppercase_words
 # Output: ["APPLE", "BANANA", "ORANGE"]

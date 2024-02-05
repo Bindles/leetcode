@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabric.js T-shirt Editor</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="logoInput" accept="image/*" />
+  <button onclick="changeOverlay()">Change Overlay</button>
+  <input type="color" id="colorPicker" value="#ff0000"> <!-- Color picker input -->
+  <button onclick="centerLogoHorizontally()">Center Horizontally</button>
+  <button onclick="centerLogoVertically()">Center Vertically</button>
+  <button onclick="resizeLogo()">Resize Logo</button>
+  <button onclick="deleteLogo()">Delete Logo</button> <!-- New button for deleting the logo -->
+  <canvas id="canvas" width="500" height="500"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.6/fabric.min.js"></script>
+  <script>
+    const canvas = new fabric.Canvas("canvas");
+    let overlayColor = "#ff0000"; // Default overlay color
+    let tshirtOverlay; // Declare the variable to hold the fabric.Image object
+    let logo;
+
+    function addTshirtOverlay() {
+      fabric.Image.fromURL("img/crew_front.png", function (img) {
+        img.set({
+          left: 0,
+          top: 0,
+          width: canvas.width,
+          height: canvas.height,
+          selectable: false,
+          backgroundColor: overlayColor, // Use the variable here
+        });
+        tshirtOverlay = img;
+        canvas.add(img);
+        canvas.renderAll();
+      });
+    }
+
+    document.getElementById("logoInput").addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        fabric.Image.fromURL(event.target.result, function (img) {
+          const newSizeFactor = 5; // Set the factor to make the logo 5 times smaller
+          img.set({
+            left: 100,
+            top: 100,
+            cornerSize: 10,
+            cornerColor: "rgba(0,0,255,0.5)",
+            transparentCorners: false,
+            selectable: true,
+          });
+          
+          // Resize the logo to be roughly 5 times smaller
+          img.scaleToWidth(img.width / newSizeFactor);
+          img.scaleToHeight(img.height / newSizeFactor);
+
+          logo = img;
+          canvas.add(img);
+        });
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    // Listen to color picker changes
+    document.getElementById("colorPicker").addEventListener("input", function (event) {
+      overlayColor = event.target.value;
+      updateOverlayColor();
+    });
+
+    function updateOverlayColor() {
+      if (tshirtOverlay) {
+        tshirtOverlay.set({ backgroundColor: overlayColor });
+        canvas.renderAll();
+      }
+    }
+
+    function centerLogoHorizontally() {
+      if (logo) {
+        const canvasCenter = canvas.width / 2;
+        logo.set({ left: canvasCenter - (logo.getScaledWidth() / 2) });
+        canvas.renderAll();
+      }
+    }
+
+    function centerLogoVertically() {
+      if (logo) {
+        const canvasCenter = canvas.height / 2;
+        logo.set({ top: canvasCenter - (logo.getScaledHeight() / 2) });
+        canvas.renderAll();
+      }
+    }
+
+    function resizeLogo() {
+      if (logo) {
+        const newSizeFactor = 5; // Set the factor to make the logo 5 times smaller
+        logo.scaleToWidth(logo.width / newSizeFactor);
+        logo.scaleToHeight(logo.height / newSizeFactor);
+        canvas.renderAll();
+      }
+    }
+
+    function deleteLogo() {
+      if (logo) {
+        if (canvas.getObjects().length === 1 || logo === canvas.getActiveObject()) {
+          canvas.remove(logo);
+          logo = null;
+          canvas.renderAll();
+
+          // Reset the file input value after logo deletion
+          document.getElementById("logoInput").value = '';
+        }
+      }
+    }
+
+    function changeOverlay() {
+      // Implement logic to change the overlay of the T-shirt
+      // For example, you can change the source of the tshirtOverlay
+      // e.g., tshirtOverlay.setSrc('new_overlay_image.png', function () { canvas.renderAll(); });
+      // Ensure to handle the CORS issues if the overlay image is hosted on a different domain.
+    }
+
+    // Initial setup
+    addTshirtOverlay();
+
+    // Listen for the delete key press
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'Delete') {
+        deleteLogo();
+      }
+    });
+  </script>
+</body>
+</html>

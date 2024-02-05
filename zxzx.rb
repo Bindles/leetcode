@@ -52,8 +52,12 @@ end
 # Print unique pairs
 p unique_pairs
 
-
-
+2932.digits.reverse.permutation(2) do |pair| 
+  unique_pair = pair.sort.join('+')
+  unique_pairs << unique_pair unless unique_pairs.include?(unique_pair)
+end
+p unique_pairs
+p 2932 % 10
 # require 'set'
 
 # arr = ["a", "b", "c"]
