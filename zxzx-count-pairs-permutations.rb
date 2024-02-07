@@ -57,7 +57,7 @@ p unique_pairs
   unique_pairs << unique_pair unless unique_pairs.include?(unique_pair)
 end
 p unique_pairs
-p 2932 % 10
+p 2932 % 100
 # require 'set'
 
 # arr = ["a", "b", "c"]
