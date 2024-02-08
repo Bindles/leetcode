@@ -330,3 +330,138 @@ def distance_traveled(main_tank, additional_tank)
   end
   total
 end
+
+
+
+#** CH3
+
+# The normal way
+p poem_words = ['twinkle', 'little', 'star', 'how', 'I', 'wonder']
+p poem_words = %w[twinkle little star how I wonder]
+
+
+# Whitespace delimited words, same as the above
+p poem_words = %w{twinkle little star how I wonder}
+# Now one qualm I have with the book here is that {} can be confused with Hash later, and you're more likely to find common usage of either %w[) or %w[] in its place. There are others, but by that point it's becoming a bit ridiculous. Personally I prefer %w[), but can see why the other is popular:
+p poem_words = %w(twinkle little star how I wonder)
+
+
+
+def echo_all(*args)
+  args.each { |arg| puts arg }
+end
+echo_all("hi", "bye")
+
+def echo_at_least_two(first_arg, *middle_args, last_arg)
+  puts "The first argument is #{first_arg}"
+  middle_args.each { |arg| puts "A middle argument is #{arg}" }
+  puts "The last argument is #{last_arg}"
+end
+
+echo_all("hi", "m", "an" "bye")
+
+
+
+movie = {
+  title: '2001',
+  genre: 'sci fi',
+  rating: 10
+}
+
+# Single-argument yields the key and value as an Array
+movie.each { |entry| pp entry }
+# [:title, "2001"]
+# [:genre, 'sci fi']
+# [:rating, 10]
+
+# This allows access to the key and the value:
+movie.each { |name, value| puts "#{name} => #{value}" }
+# title => 2001
+# genre => sci fi
+# rating => 10
+
+movie.each { |name,_| puts "#{name}"}
+# title => 2001
+# genre => sci fi
+# rating => 10
+
+data = {
+  name: 'John',
+  age: 30,
+  hobbies: ['reading', 'coding', 'hiking'],
+  address: { city: 'New York', zip: '10001' }
+}
+
+# Using pp
+pp data
+
+# Using p
+p data
+
+class Spells
+  attr_accessor :name, :type
+
+
+  def initialize(name, type)
+    @name = name
+    @type = type
+    # @spells << self.name
+  end
+end
+
+fireball = Spells.new('Fireball', 'Fire')
+p fireball.name
+#p fireball.spells
+
+#########
+#2ND
+class Spell
+  attr_accessor :name, :type, :dmg
+  #@@all = []
+  @@spells = []
+
+  def initialize(name, type, dmg)
+    @name = name
+    @type = type
+    @dmg = dmg
+    self.class.add_spell(self)  # Automatically add the new spell to the spells array
+  end
+
+  def self.add_spell(spell)
+    #@@all << spell 
+    @@spells << spell
+  end
+
+  def self.all
+   #@@all
+   @@spells
+  end
+
+  def attributes
+    { name: @name, type: @type, dmg: @dmg }
+  end
+end
+
+# Creating spells
+fireball = Spell.new("Fireball", "Fire", 20)
+thunderbolt = Spell.new("Thunderbolt", "Electric", 30)
+
+# Accessing all spells
+p Spell.all
+
+#p Spell.all.map(&:name, &:type)
+
+p Spell.all.map(&:attributes)
+# p Spell.all.map(&:name)
+
+# p Spell.all.map(&:type)
+#p Spell.all.map { |spell| spell.attributes.slice(:name, :type, :dmg) }
+p '----'
+p '--*--'
+p Spell.all.map { |spell| p spell.name, spell.type, spell.dmg}
+p Spell.all.map { |spell| p spell.attributes.each { |key, value| p key, value} }
+p fireball.attributes.keys
+p fireball.attributes.values
+p fireball.attributes.each { |key, value| p key, value}
+
+
