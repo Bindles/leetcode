@@ -252,3 +252,81 @@ p %i(The rain in spain falls mainly on the plain)
 
 p %i(The rain in spain falls mainly on the plain).grep(/the/i)
 # => ["The", "the"]
+
+# Example 1: Without using the safe navigation operator
+person = nil
+# If person is nil, calling `name` would result in an error
+# puts person.name  # This would raise a NoMethodError
+
+# Using the safe navigation operator (&.)
+p person&.name
+
+# @param {Integer} main_tank
+# @param {Integer} additional_tank
+# @return {Integer}
+def distance_traveled(mainTank = 5, additionalTank = 10)
+    extra = false
+    p exDist = mainTank / 5 * 10
+    p dist = mainTank * 10
+    dist + exDist
+end
+
+# @param {Integer} main_tank
+# @param {Integer} additional_tank
+# @return {Integer}
+#WORKS
+def distance_traveled(main_tank = 5, additional_tank = 10)
+  dist = 0 
+  ex_dist = 0
+  #p ex_dist = main_tank / 5 * 10 if additional_tank >= (main_tank / 5 )
+  p dist = main_tank * 10
+  #dist + ex_dist
+  while main_tank >= 5 && additional_tank >= 1
+    main_tank -= 4
+    additional_tank -= 1
+    dist +=10
+  end
+  return dist
+end
+p distance_traveled
+
+# @param {Integer} main_tank
+# @param {Integer} additional_tank
+# @return {Integer}
+# @param {Integer} main_tank
+# @param {Integer} additional_tank
+# @return {Integer}
+def distance_traveled(main_tank, additional_tank)
+  dist = main_tank * 10
+  while main_tank >= 5 && additional_tank >= 1
+    main_tank -= 4
+    additional_tank -= 1
+    dist +=10
+  end
+  return dist
+end
+
+
+def distance_traveled(main_tank, additional_tank)
+  dist = main_tank * 10
+  until main_tank < 5 || additional_tank < 1
+    main_tank -= 4
+    additional_tank -= 1
+    dist +=10
+  end
+  return dist
+end
+
+
+
+
+
+def distance_traveled(main_tank, additional_tank)
+  total = main_tank * 10
+  while main_tank > 4 && additional_tank > 0
+      main_tank -= 4
+      additional_tank -= 1
+      total += 10
+  end
+  total
+end
