@@ -65,3 +65,29 @@ def num_identical_pairs(nums = [1,2,3,1,1,3])
   return res
 end
 p num_identical_pairs
+
+#SOL 3 | NICE | SIMPLE | EASY INTO ONE LINER MANY WAYS
+def num_identical_pairs(nums = [1,2,3,1,1,3])
+  count = Hash.new(0)
+  nums.each { |num| count[num] += 1 }
+  
+  count.values.sum { |c| c * (c - 1) / 2 }
+end
+
+def num_identical_pairs(nums = [1,2,3,1,1,3])
+  Hash.new(0).tap{|cnt|nums.each {|num|cnt[num]+= 1} }.values.sum{|c| c * (c - 1) / 2} 
+end
+
+def num_identical_pairs(nums = [1,2,3,1,1,3])
+  Hash.new(0).tap{|cnt|nums.each {|num|cnt[num]+= 1} }.values.sum {_1 * (_1 - 1) / 2}
+end
+
+def num_identical_pairs(nums = [1,2,3,1,1,3])
+  nums.tally.values.sum { |c| c * (c - 1) / 2 }
+end
+
+
+
+
+
+
