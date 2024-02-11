@@ -3,7 +3,8 @@
 # @return {Integer}
 def min_operations(nums, x)
   target = nums.sum - x
-  n = nums.count
+  n = nums.size
+  p n
   return n if target == 0
   
   current_sum = 0
