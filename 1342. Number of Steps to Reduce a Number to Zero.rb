@@ -17,3 +17,16 @@ def number_of_steps(num)
     steps
 end
 p number_of_steps(14)
+
+
+#JAVASCRIPT
+# function number_of_steps(num) {
+#   steps=0
+#   while (num > 0) {
+#     num % 2 == 0? num /= 2 : num--;
+#     steps++;
+#   }
+#   return steps
+# }
+# number_of_steps(14);
+
