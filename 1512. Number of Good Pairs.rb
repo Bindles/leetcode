@@ -137,3 +137,20 @@ end
 
 puts "Final result: #{result.inspect}"
 
+
+
+
+# 2006. Count Number of Pairs With Absolute Difference K
+#MY SOL | PUTS
+def count_k_difference(nums, k)
+  res=0
+  (0...nums.size).each do |i|
+      (i+1...nums.size).each do |j|
+        p "#{nums[i]} (#{i}) vs #{nums[j]} (#{j}) | #{(nums[i] - nums[j]).abs} #{k} #{(nums[i]-nums[j]).abs == k}"
+          if (nums[i] - nums[j]).abs == k
+              res+=1
+          end
+      end
+  end
+  return res
+end
