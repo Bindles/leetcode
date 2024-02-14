@@ -84,7 +84,6 @@ def merge_similar_items(items1 = [[1,1],[4,5],[3,8]], items2 = [[3,1],[1,5]])
       sum_of_second_numbers = group.transpose[1].sum
       [key, sum_of_second_numbers]
   end
-  
   p merged_grouped_items
 end
 
