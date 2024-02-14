@@ -17,3 +17,15 @@ end
 
 p check_if_pangram("thequickbrownfoxjumpsoverthelazydog")
 
+#OTHER
+#EXAMPLE OF ALL | NOT MINE
+def check_if_pangram(sentence)
+  return ('a'..'z').to_a.join.chars.all? { |char| sentence.include?(char) }
+end
+
+
+
+p ('a'..'z').to_a.join
+
+numbers = [2, 2, 2, 2, 2]
+puts numbers.all?(2)  # Output: true
