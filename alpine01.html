@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alpine.js Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2"></script>
+</head>
+<body>
+  <!-- 
+    x-data
+    x-text
+    x-on:click || @click
+  -->
+    <div x-data="{ message: 'Hello, World!' }">
+        <p x-text="message"></p>
+        <button @click="message = 'Hello, Alpine.js!'">Click me</button>
+    </div>
+
+    <div x-data="{ varMessage: 'hello'}">
+    <p x-text="varMessage"></p>
+    <button x-on:click="varMessage = 'world'">Change</button>
+    </div>
+
+    <div x-data="{ isVisible: true }">
+      <p x-show="isVisible">This paragraph is visible.</p>
+      <button @click="isVisible = !isVisible">Toggle Visibility</button>
+  </div>
+  <br>
+  <div x-data="{ items: ['Apple', 'Banana', 'Orange'] }">
+    <ul>
+        <template x-for="item in items" :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
+    <button @click="items.push('New Item')">Add Item</button>
+
+    <div x-data="{ items: ['Apple', 'Banana', 'Orange'], newItem: '' }">
+      <ul>
+          <template x-for="item in items" :key="item">
+              <li x-text="item"></li>
+          </template>
+      </ul>
+      <input type="text" x-model="newItem" :style="{ color: newItem.length >= 8 ? 'red' : 'inherit' }" style="color: inherit;" placeholder="Enter new item">
+      <button @click="items.push(newItem.trim().charAt(0).toUpperCase() + newItem.trim().slice(1)); newItem = ''">Add Item</button>
+  </div>
+</div>
+</body>
+</html>

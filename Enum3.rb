@@ -80,3 +80,7 @@ p diagonal_sort
 # puts mat2.map(&:inspect)
 # puts "\nSorted matrix:"
 # puts diagonal_sort(mat2).map(&:inspect)
+
+x=0
+x ||= 5
+p x
