@@ -36,6 +36,7 @@ def majority_element(nums)
 end
 
 
+
 # #OTHERS WORK TO LOOK AT:
 # def majority_element(nums)
 #   h=nums.tally
