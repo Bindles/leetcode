@@ -1,5 +1,8 @@
 #**122. Best Time to Buy and Sell Stock II| PART1
-#PT 2
+# @param {Integer[]} prices
+# @return {Integer}
+
+#SOLUTION 1*
 def max_profit(prices)
   profit = 0
   buy = prices[0] #init for iteration1
@@ -12,8 +15,7 @@ def max_profit(prices)
   profit
 end
 
-
-#ELSE
+#SOL 2
 def max_profit(prices)
   profits = 0
 
@@ -22,12 +24,10 @@ def max_profit(prices)
           profits += prices[i] - prices[i - 1]
       end
   end
-  
   profits
 end
 
-# @param {Integer[]} prices
-# @return {Integer}
+#SOL 1* | PUTS
 def max_profit(prices)
   profit = 0
   buy = prices[0] #init for first iteration
@@ -42,7 +42,6 @@ def max_profit(prices)
   end
   profit
 end
-
 prices = [7,1,5,3,6,4]
 p max_profit(prices)
 
@@ -50,7 +49,7 @@ p max_profit(prices)
 # @param {Integer[]} prices
 # @return {Integer}
 
-#SOL 2*
+#SOL 1*
 def max_profit(prices)
   profit = 0
   buy = prices[0]
@@ -67,7 +66,7 @@ def max_profit(prices)
   profit
 end
 
-#OLD SOL 1
+#OLD SOL 2
 def max_profit(prices)
   return 0 if prices.empty?
   minprice = prices[0]
