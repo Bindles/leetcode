@@ -4,12 +4,11 @@
 #MY SOL 2
 def can_jump(nums)
   max = 0
-  len = nums.length - 1
   i = 0
   while i <= max
       max = [max, i+nums[i]].max
       i += 1
-      return true if max >= len
+      return true if max >= nums.length - 1
   end
   false
 end
@@ -54,4 +53,19 @@ def can_jump(nums = [2,3,1,1,4])
     i += nums[i]
   end
   return false
+end
+
+#**SOMEONE ELSES:
+#GOALIE
+def can_jump(nums)
+  goal = nums.length - 1
+
+  i = nums.length-1
+  while i >= 0
+    if i + nums[i] >= goal
+      goal = i
+    end
+    i -= 1
+  end
+  goal == 0 ? true : false
 end
