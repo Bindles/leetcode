@@ -1,16 +1,4 @@
-
-def find_winners(matches = [[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]])
-  winners = matches.map(&:first).uniq
-  losses = matches.map(&:last)
-  
-  zero_loss_players = winners - losses.flatten
-  one_loss_players = (winners - zero_loss_players).sort
-
-  p [zero_loss_players.sort, one_loss_players]
-end
-
-
-
+#SOL 1st WORKS
 def find_winners(matches = [[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]])
   winners = matches.map(&:first).uniq
   losses = matches.map(&:last).group_by(&:itself).transform_values(&:size)
