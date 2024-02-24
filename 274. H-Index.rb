@@ -1,5 +1,11 @@
 # @param {Integer[]} citations
 # @return {Integer}
+#*MY SOLUTION: 
+def h_index(citations = [100])
+  citations.sort.reverse.each.with_index.count(&:>)
+end
+
+p h_index
 def h_index(citations = [100])
   arr=[]
   citations.each do |i|
@@ -43,3 +49,17 @@ subarrays = [[3, 3], [0, 5], [6, 1], [7, 8], [5, 5]]
 p 'a'
 highest_subarray = subarrays.select { |subarray| subarray[1] >= subarray[0] }.max_by { |subarray| subarray[0] }
 puts highest_subarray.inspect
+
+
+#FROM EDITOR LC
+
+# @param {Integer[]} citations
+# @return {Integer}
+def h_index(citations = [3,0,6,1,5])
+  arr = []
+  citations.each do |i|
+    a = citations.count { |c| c >= i }
+    arr << [i, a] if a >= i
+  end
+  arr.select { |subarray| subarray[1] >= subarray[0] }.max_by { |subarray| subarray[0] }&.first || 1
+end
