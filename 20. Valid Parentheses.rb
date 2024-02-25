@@ -1,6 +1,8 @@
 # @param {String} s
 # @return {Boolean}
 #*SOL 1
+# @param {String} s
+# @return {Boolean}
 def is_valid(s)
   stack = []
   pairs = {'(' => ')','{' => '}','[' => ']'}
