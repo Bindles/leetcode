@@ -65,3 +65,54 @@ def is_same_tree(p, q)
     end
     queue1.empty? && queue2.empty? ? true : false
 end
+
+#*next prob subsequence
+# @param {Integer[]} nums
+# @return {Integer}
+def longest_consecutive(nums)
+  count = 0
+  count_arr = []
+  my_arr = nums.sort.uniq
+  my_arr.each_with_index do |num, i|
+      if num + 1 == my_arr[i + 1]
+          count += 1
+      else
+          count_arr << count + 1
+          count = 0
+      end    
+  end
+  count_arr.max || 0 
+end
+
+# @param {Integer[]} nums
+# @return {Integer}
+def longest_consecutive(nums)
+  return 0 if nums.empty?
+  nums.uniq.sort.chunk_while { |i, j| i + 1 == j }.map(&:length).max
+end
+
+# @param {Integer[]} nums
+# @return {Integer}
+def longest_consecutive(nums)
+  return 0 if nums.empty?
+  nums.uniq.sort.chunk_while{|i,j| i+1 == j}.map(&:length).max
+end
+
+
+
+def longest_consecutive(nums)
+  numsx = nums.to_set
+  seq_length = 0
+  numsx.each do |num|
+    if !numsx.include?(num - 1)
+      curr_num = num
+      curr_link = 1
+      while numsx.include?(curr_num + 1)
+        curr_num += 1
+        curr_link += 1
+      end
+      seq_length = [seq_length, curr_link].max
+    end
+  end
+  seq_length
+end
