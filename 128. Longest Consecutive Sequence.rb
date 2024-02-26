@@ -19,7 +19,7 @@ def longest_consecutive(nums = [100,4,200,1,3,2])
 end
 p longest_consecutive
 
-#*MY SOL 1
+#*MY SOL 1.5 CONCISE TIMEOUT
 def longest_consecutive(nums = [100,4,200,1,3,2])
   count=0
   counts=[]
@@ -28,7 +28,7 @@ def longest_consecutive(nums = [100,4,200,1,3,2])
   } and counts.max || 0
 end
 
-#*MY SOL 1.5 | DONT CALL nums.sort.uniq twice
+#*MY SOL 1 | DONT CALL nums.sort.uniq twice
 def longest_consecutive(nums = [100,4,200,1,3,2])
   count=0
   counts=[]
