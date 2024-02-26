@@ -9,8 +9,7 @@ def summary_ranges(nums = [0,2,3,4,6,8,9])
         next if nums[i + 1] == nums[i] + 1
         result.push [nums[start], nums[i]].uniq.join("->")
         start = i + 1
-    end
-        
+    end    
     result
 end
 
