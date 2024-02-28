@@ -48,11 +48,13 @@ p nums
 # def reduction_operations(nums = [5,1,3])
 #   nums.sort.tally.sum(diff = 0) { |num, count| count * (diff += 1) }
 # end
+#*
 def reduction_operations(nums = [5,1,3])
   nums.sort.tally.sum(diff=0){ _2*~-diff+=1 }
 end
+#*
 def reduction_operations(nums = [5,1,3])
-  nums.sort.tally.sum(diff=0){|num, count| count*~-diff+=1 }
+  nums.sort.tally.sum(diff=0){|_num, count| count*~-diff+=1 }
 end
 
 
@@ -117,3 +119,40 @@ count = 2
 diff = 0
 result = count * (~-diff) + 1
 puts result # Output: 3
+
+#*
+def reduction_operations(nums)
+  nums.sort.tally.sum(d=0){ _2*~-d+=1 }
+end
+p reduction_operations
+
+
+#*
+def reduction_operations(nums)
+  nums.sort.slice_when {|a, b| a != b }.each_with_index.inject(0) {|res, (a, idx)| res + a.size * idx }
+end
+
+#*
+def reduction_operations(nums)
+  nums
+      .tally
+      .sort
+      .collect {|x| x.last}
+      .each_with_index
+      .reduce(0) { |sum, pair| sum + pair[0]*pair[1] }
+end
+
+#*
+def reduction_operations(nums)
+  nums.sort!
+  count = 0
+  (nums.size - 1).downto(1).each do |i|
+    next if nums[i] == nums[i - 1]
+    count += 1
+    nums[i] = nums[i - 1]
+    if i + 1 < nums.size
+      count += (nums.size - 1 - i)
+    end
+  end
+  count
+end
