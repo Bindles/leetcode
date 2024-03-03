@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+.family-tag {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 60px;
+  box-sizing: border-box;
+  color: #0f0f0f;
+  display: inline-flex;
+  font-size: clamp(12px,.9340338587vw,16px);
+  font-weight: 500;
+  height: var(--tagHeight);
+  justify-content: center;
+  line-height: calc(var(--tagHeight) - 1rem - 2px);
+  padding: 0.5rem var(--paddingX);
+  position: relative;
+  transition-duration: .15s;
+  transition-property: background-color,color,border-color;
+  transition-timing-function: ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.family-tag::before {
+  background-color: #efece6;
+  border: 2px solid;
+  border-color: inherit;
+  border-radius: inherit;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition-duration: inherit;
+  transition-property: transform;
+  transition-timing-function: inherit;
+  z-index: 2;
+}
+
+.family-tag::after {
+  background-color: #efece6;
+  border: 2px solid;
+  border-color: inherit;
+  border-radius: inherit;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-2px,4px);
+  transition-duration: inherit;
+  transition-property: transform;
+  transition-timing-function: inherit;
+  z-index: 1;
+}
+
+.family-tag:hover::before {
+  background-color: #efece6;
+}
+
+.family-tag:hover::after {
+  background-color: #00e95c;
+}
+
+.family-tag-live-screen-printing::before, 
+.family-tag-live-screen-printing:focus::before, 
+.family-tag-screen-printing::before, 
+.family-tag-screen-printing:focus::before {
+  background-color: #00e95c;
+}
+
+</style>
+
+</head>
+<body>
+  
+  <!-- Use a button element with the class 'family-tag-inner' -->
+  <button class="family-tag-inner">Screen Printing</button>
+
+  <div class="tags">
+    <div class="family-tag family-tag-screen-printing">
+      ::before
+<div class="family-tag-inner">Screen Printing</div>
+      ::after
+</div>
+</div>
+</body>
+</html>
+
+

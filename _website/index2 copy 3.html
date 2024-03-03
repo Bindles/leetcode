@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss-forms@latest" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+
+
+
+<!-- app/views/shared/_header.html.erb -->
+<header class="bg-blue-500 text-black py-1">
+    <div class="container mx-auto flex justify-between items-center">
+      <div>
+        <span class="text-lg font-bold"><img src="C:\dev\leetcode\_img\ur-logo-01.webp" width=84  height=84 alt="Urban Royalty"></span>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-gray-500">Home</a>
+        <a href="#" class="hover:text-gray-500">Code</a>
+        <a href="#" class="hover:text-gray-500">Login</a>
+      </div>
+  
+  
+        <form class="flex items-center" action="/posts" accept-charset="UTF-8" method="get">
+          <input type="text" name="search" id="search" placeholder="Search posts" class="rounded bg-gray-800 text-white px-4 py-2    focus:outline-none focus:shadow-outline" />
+          <input type="submit" name="commit" value="Search" class="ml-2 bg-black text-white px-4 py-2 rounded hover:bg-white hover:text-black focus:outline-none focus:shadow-outline" data-disable-with="Search" />
+  </form>
+  
+    </div>
+  </header>
+
+
+<div class="container mx-auto py-8">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">T-Shirt Collection</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- T-Shirt Card -->
+            <div class="bg-black rounded-lg shadow-md overflow-hidden border-2 border-white col-span-2">
+                <img src="tshirt1.jpg" alt="T-Shirt 1" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">T-Shirt Name</h3>
+                    <p class="text-gray-400 mb-4">$19.99</p>
+                    <p class="text-gray-300">Description of the T-Shirt goes here. Add any additional details you need.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Repeat the T-Shirt Card markup to add more slots -->
+            <div class="bg-black rounded-lg shadow-md overflow-hidden border-2 border-white col-span-2">
+                <img src="tshirt2.jpg" alt="T-Shirt 2" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">T-Shirt Name</h3>
+                    <p class="text-gray-400 mb-4">$24.99</p>
+                    <p class="text-gray-300">Description of the T-Shirt goes here. Add any additional details you need.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more T-Shirt Cards here -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
