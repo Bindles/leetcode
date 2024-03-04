@@ -29,3 +29,13 @@ def build_array(nums = [0,2,1,5,3,4])
 p [nums[nums[0]]]   
 end
 
+
+def dividerem(a,b)
+  div = a / b
+  rem = a%b
+  p "#{a} % #{b}:"
+  p "#{div} rem: #{rem}"
+  return [div, rem]
+end
+
+p dividerem(10,3)
