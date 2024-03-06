@@ -3,7 +3,7 @@
 # @return {String[]}
 
 #*MY SOL 1
-def fizz_buzz(n)
+def fizz_buzz(n=3)
   result=[]
   (1..n).each do |num|
     if num % 3 == 0 && num % 5 == 0
@@ -18,11 +18,10 @@ def fizz_buzz(n)
   end
   result
 end
-
-
+p fizz_buzz
 
 #* 2
-def fizz_buzz(n)
+def fizz_buzz(n=3)
     (1..n).map do |i|
         res = ""
         res += "Fizz" if i%3 == 0
@@ -32,18 +31,20 @@ def fizz_buzz(n)
         res
     end
 end
+p fizz_buzz
 
 #* 3
-def fizz_buzz(n)
+def fizz_buzz(n=5)
     (1..n).map do |i|
         val = "".then {|str| i > 2 && i % 3 == 0 ? "Fizz" : str }
                 .then {|str| i > 4 && i % 5 == 0 ? str + "Buzz" : str }
         val.empty? ? i.to_s : val
     end
 end
+p fizz_buzz
 
 #* 4 VERY IMPORTANT LESSON | ARRAY AS EACH/MAP
-def fizz_buzz(n)
+def fizz_buzz(n=5)
     Array.new(n) do |index|
         index += 1
         if index % 3 == 0 && index % 5 == 0
@@ -57,3 +58,4 @@ def fizz_buzz(n)
         end
     end
 end
+p fizz_buzz
