@@ -4,6 +4,17 @@ l('hi')
 nums = [1, 3, 5, 6, 8, 12, 17]
 target=8
 l(nums)
+const numarray=[7,9,12,1,4,3]
+const words=["banana", "apple", "strawberry"]
+
+let re = numarray.map(nums => nums * 2)
+l(re)
+let res = numarray.map((nums, index) => nums ** index)
+l(res)
+let reso = words.map((word, i) => ({ [word.toUpperCase()]: i}))
+l(reso)
+let resa = words.map(word => ({ [word.toUpperCase()]: word.length}))
+l(resa)
 
 l(nums.find(num => num === target))
 
