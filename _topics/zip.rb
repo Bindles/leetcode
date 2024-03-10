@@ -1,3 +1,13 @@
+#* ARRAY => ZIP
+#* LEARN => ZIP
+arr=[1,2,3]
+array=[11,12,13]
+p arr.zip(array)
+
+names = ["Mary", "John", "Emma"]
+heights = [180, 165, 170]
+
+p names.zip(heights).sort_by{ |k,v| -v}
 
 arr1 = [1, 2, 3]
 arr2 = ['a', 'b', 'c']
