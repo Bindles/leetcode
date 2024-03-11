@@ -4,6 +4,45 @@ capacity = [4,3,1,5,2]
 # @param {Integer[]} apple
 # @param {Integer[]} capacity
 # @return {Integer}
+#* SOL 1
+def minimum_boxes(apple, capacity)
+  sum = apple.sum
+  capacity.sort_by(&:~).find_index {|index|(sum -= index) <= 0} + 1  
+end
+
+puts minimum_boxes(apple, capacity) # Output: 2
+puts minimum_boxes([6,2,1], [8,6,10,5,2,6,2,8,1]) 
+
+#* 2|REVERSE
+def minimum_boxes(apple, capacity)
+  capacity.sort!.reverse!
+  sum = apple.sum
+  box_count=0
+
+  while sum > 0
+    sum -= capacity[box_count]
+    box_count+=1
+  end
+  box_count
+end
+puts minimum_boxes(apple, capacity) # Output: 2
+
+#*3|POP
+def minimum_boxes(apple, capacity)
+  capacity.sort!
+  sum = apple.sum
+  box_count=0
+
+  while sum > 0
+    sum -= capacity.pop
+    box_count+=1
+  end
+  box_count
+end
+puts minimum_boxes(apple, capacity) # Output: 2
+
+
+#*WORKING[dont work]*****************************
 def minimum_boxes(apple, capacity)
   p sumz = apple.sum
   p capacity.sort!.reverse.take_while{|x| sumz -= apple.delete_at(0) if sumz > x}.length
@@ -51,50 +90,6 @@ def minimum_boxes(apple, capacity)
 
   end
 end
-
-def minimum_boxes(apple, capacity)
-  capacity.sort!.reverse!
-  sum = apple.sum
-  box_count=0
-
-  while sum > 0
-    sum -= capacity[box_count]
-    box_count+=1
-  end
-  box_count
-end
-
-
-
-apple = [1, 3, 2]
-capacity = [4, 3, 1, 5, 2]
-puts minimum_boxes(apple, capacity) # Output: 2
-puts minimum_boxes([6,2,1], [8,6,10,5,2,6,2,8,1]) 
-
-def minimum_boxes(apple, capacity)
-  capacity.sort!
-  sum = apple.sum
-  box_count=0
-
-  while sum > 0
-    sum -= capacity.pop
-    box_count+=1
-  end
-  box_count
-end
-puts minimum_boxes(apple, capacity) # Output: 2
-
-
-
-
-
-
-# @param {Integer[]} apple
-# @param {Integer[]} capacity
-# @return {Integer}
-def minimum_boxes(apple, capacity)
-  s = apple.sum; capacity.sort_by(&:~).find_index { (s -= _1) <= 0 } + 1  
-end
-
+#************************************************
 
 
