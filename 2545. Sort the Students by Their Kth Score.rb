@@ -15,6 +15,12 @@ p sort_the_students(score,k)
 def sort_the_students(score, k)
   score.sort {|a,b| b[k] <=> a[k]}
 end
+
+#JS|SAME
+# funtion sort_the_students(score, k) {
+#   return score.sort((a,b) => b[k] - a[k])
+# }
+
 def sort_the_students(score, k)
   score.sort { _2[k] <=> _1[k]}
 end
