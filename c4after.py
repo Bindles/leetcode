@@ -51,8 +51,15 @@ class Solution:
             for arr in self.disjoint(nums[start:end], k)
         )
 
+                                #ARGS, EXPECTED)
+print(Solution().maximumStrength([1,2,3,-1,2], 3), 22) # 22 =>PASS
+print(Solution().maximumStrength([12,-2,-2,-2,-2], 5), 64) #64 =>PASS
+print(Solution().maximumStrength([-1, -2, -3], 1), -1) # -1=> PASS
+print(Solution().maximumStrength([-99, 85], 1), 85) # 85 =>PASS
+print(Solution().maximumStrength([2,-76,77,-30,5,-96,24], 3), 497) # 372 =>FAIL expects 497
 
-print(Solution().maximumStrength([1,2,3,-1,2], 3), 22)
-print(Solution().maximumStrength([12,-2,-2,-2,-2], 5), 64)
-print(Solution().maximumStrength([-1, -2, -3], 1), -1)
-print(Solution().maximumStrength([-99, 85], 1), 85)
+# 22 22
+# 64 64
+# -1 -1
+# 85 85
+# 372 497

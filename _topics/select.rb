@@ -96,3 +96,36 @@ def halves_are_alike_x(s = "book")
   p count_vowels(resultb)
   count_vowels(resulta) == count_vowels(resultb)
 end
+
+nums = [1, 2, 3, 4, 5]
+indices_of_evens = nums.each_with_index.select { |num, index| num.even? }.map(&:last)
+puts indices_of_evens.inspect
+indices_of_evenz = nums.each_with_index.select { |num, index| num.even? }
+puts indices_of_evenz.inspect
+# Use select.with_index to select indices of even numbers
+result = nums.select.with_index { |num, index| num.even? }
+
+puts result.inspect
+
+nums = [1, 2, 3, 4, 5]
+
+# Use select.with_index to select indices of even numbers
+result = nums.select.with_index { |num, index| num.even? }
+puts result.inspect
+
+
+nums = [1, 2, 3, 4, 5]
+
+# Use select.with_index to select indices of even numbers
+result = nums.map.with_index { |num, index| index if num.even? }.compact
+
+puts result.inspect
+
+nums = [1, 2, 3, 4, 5]
+
+# Use select.with_index to select indices where the number is even
+result = nums.select.with_index { |num, index| num.even? }.map { |pair| pair[1] }
+
+puts result.inspect
+
+
