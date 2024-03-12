@@ -17,7 +17,7 @@ console.log(findMaxK(nums))
 var findMaxK = function(nums) {
   let setNums = new Set(nums); 
   let lp = -1; 
-  for (let num of setNums) {
+  for (let num of setNums) {           //maybe irrelevant num > lp
     if(setNums.has(-num) && num > 0 && num > lp)  lp = num;
   }
   return lp; 
