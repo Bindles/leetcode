@@ -1,5 +1,5 @@
 #* 1641. Count Sorted Vowel Strings
-n = 2
+n = 4
 # @param {Integer} n
 # @return {Integer}
 

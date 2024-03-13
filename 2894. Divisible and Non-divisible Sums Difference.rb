@@ -40,3 +40,25 @@ def difference_of_sums(n, m)
     (num1.sum - num2.sum)
 end
 p difference_of_sums(n, m)
+
+
+# @param {String} s
+# @return {String}
+def modify_string(s)
+    previous = '!'
+    s = '!' + s + '!'
+    (1...(s.length - 1)).each do |i|
+      if s[i] != '?'
+        previous = s[i]
+      else
+        s[i] = if previous != 'q' && s[i + 1] != 'q'
+                 'q'
+               elsif previous != 'w' && s[i + 1] != 'w'
+                 'w'
+               else
+                 'e'
+               end
+      end
+    end
+    s[1..-2]
+end

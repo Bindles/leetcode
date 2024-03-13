@@ -28,10 +28,15 @@ def count_sorted_vowel_strings_dp(n)
   dp[n][5]
 end
 
+def count_vm(n)
+  (n+4)*(n+3)*(n+2)*(n+1) / 24  
+end
+
 n = 1000
 
 Benchmark.bm(20) do |x|
   x.report("Bottom-up:") { count_vowel_strings_bottom_up(n) }
   x.report("Oneliner:") { count_vowel_strings_oneliner(n) }
   x.report("Iterative DP:") { count_sorted_vowel_strings_dp(n) }
+  x.report("Math:") { count_vm(n) }
 end
