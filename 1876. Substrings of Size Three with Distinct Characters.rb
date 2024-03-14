@@ -2,8 +2,7 @@
 s = "xyzzaz"
 # @param {String} s
 # @return {Integer}
-
-#* SOL 1 
+#* SOL 1  | 0..s.length-1 == 0...s.length || s.length.times do
 def count_good_substrings(s)
     res = 0
     (s.length-2).times do |i|
@@ -13,12 +12,17 @@ def count_good_substrings(s)
     res
 end
 p count_good_substrings(s)
-
+p '-'
 #* SOL 2
+def count_good_substrings(s)
+    (s.size-2).times.count { |i| s[i, 3].chars.uniq.size == 3  }
+end
+p count_good_substrings(s)
+#* SOL 3
 def count_good_substrings(s)
     (0..s.size-3).count { |i| s[i, 3].chars.uniq.size == 3  }
 end
-
+p count_good_substrings(s)
 #* SOL 0 | WORKING | PASSES IN VS CODE BUT GIVES WEIRD ERROR LC
 def count_good_substrings(s)
     ss = s.split('')
