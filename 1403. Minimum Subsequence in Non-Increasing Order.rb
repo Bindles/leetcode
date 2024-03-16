@@ -16,6 +16,20 @@ def min_subsequence(nums)
     return result if subsequence_sum > sum / 2
   end
 end
+puts min_subsequence(nums)
+
+#* SOL 1.2 | OPTIMIZED?
+def min_subsequence(nums)
+  nums.sort_by!{-_1}
+  sum = nums.sum
+  subsequence_sum = 0
+  
+  nums.each.with_index do |num, i|
+    subsequence_sum += num
+    return nums[0, i+1] if subsequence_sum > sum / 2 #OR nums[0..i]
+  end
+end
+puts min_subsequence(nums)
 
 #* Sol 1.1 | Puts | Comments
 def min_subsequence(nums)
