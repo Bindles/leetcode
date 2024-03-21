@@ -47,3 +47,9 @@ end
 p max_increase_keeping_skyline(grid)
 
 
+#* SI
+
+def max_increase_keeping_skyline(grid)
+  grid.sum { |row| row.min } - grid.map(&:min).sum
+end
+#max_increase_keeping_skyline(grid)
