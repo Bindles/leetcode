@@ -29,4 +29,7 @@ end
 p row_and_maximum_ones(mat) # Output: 1
 
 
+words = ["one.two.three","four.five","six"], separator = "."
+p words.join('.').split('.')
+
 
