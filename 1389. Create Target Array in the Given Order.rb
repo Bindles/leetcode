@@ -67,3 +67,8 @@ a[3] = 3
 a.insert(2, 99) #< insert this but push all current to right
 
 p a
+
+
+zz = 345
+p zz
+p zz.digits.length.even?
