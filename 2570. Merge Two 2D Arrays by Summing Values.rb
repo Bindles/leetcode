@@ -20,7 +20,7 @@ def merge_arrays(nums1, nums2)
   nums1.to_h.merge(nums2.to_h){|_,v1,v2| v1 + v2 }
 end
 p merge_arrays(nums1, nums2) 
-def merge_arrays(nums1, nums2) #* FINAL
+def merge_arrays(nums1, nums2) 
   nums1.to_h.merge(nums2.to_h){|_,v1,v2| v1 + v2 }.sort
 end
 p merge_arrays(nums1, nums2)
