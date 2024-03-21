@@ -5,3 +5,4 @@ s = "ababa"
 def remove_palindrome_sub(s)
   s.reverse == s ? 1 : 2
 end
+p remove_palindrome_sub(s)
