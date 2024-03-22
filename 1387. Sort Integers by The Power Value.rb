@@ -19,6 +19,7 @@ def get_kth(lo, hi, k)
     ans = maps.sort_by {|k, v| v }.map(&:first)
     ans[k - 1]
 end
+p get_kth(lo, hi, k)
 
 #* MY SOL 2 | MUCH FASTER | THIS TOOK LONG TIME IM PROUD OF IT 
 def get_kth(lo, hi, k)
@@ -41,3 +42,4 @@ def get_kth(lo, hi, k)
     ans.sort_by! {|item| [item['steps'], item['val']] }
     return ans[k - 1]['val']
 end
+p get_kth(lo, hi, k)
