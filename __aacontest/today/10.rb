@@ -1,0 +1,1 @@
+for num in nums if num / k num / num if k - sum (num // i for i in range(1 N rina
