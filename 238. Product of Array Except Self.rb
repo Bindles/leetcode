@@ -4,25 +4,35 @@ def product_except_self(nums = [1,2,3,4])
   nums.reduce.with_index{|acc,(num, index)| acc * num * index }
 end
 
+#* MY SOL 2 | PUTS | SHOW NUMS :*
 def product_except_self(nums = [1,2,3,4])
   tp = nums.reduce(:*)
   p tp
-  nums.map{ tp / _1}
-  nums.map{ nums.reduce(:*) / _1}
+  nums.map{|num| tp / num}
+  nums.map{|num| nums.reduce(:*) / num}
 end
 
+#* 2|CONCISE
+p product_except_self
 def product_except_self(nums = [1,2,3,4])
-  nums.map{ nums.reduce(:*) / _1}
+  nums.map{|num| nums.reduce(:*) / num}
 end
+p product_except_self
 
+#* 2|READABLE
 def product_except_self(nums = [1,2,3,4])
   totproduct = nums.reduce(:*)
   nums.map { |num| num.zero? ? 0 : totproduct / num }
 end
-
 p product_except_self
 
-#MY SOL | 1st WORKING
+#* YIELD SELF | COMBINE 2 LINES INTO ONE
+def product_except_self(nums = [1,2,3,4])
+  nums.reduce(:*).yield_self { |totproduct| nums.map { |num| num.zero? ? 0 : totproduct / num } }
+end
+p product_except_self
+
+#*MY SOL | 1st WORKING
 def product_except_self(nums = [1,2,3,4])
   zero_count = nums.count(0)
   
@@ -39,7 +49,7 @@ end
 
 p product_except_self([-1,1,0,-3,3])
 
-#MY SOL | 1st WORKING | W COMMENTS
+#*MY SOL 1| 1st WORKING | W COMMENTS
 def product_except_self(nums = [1,2,3,4])
   zero_count = nums.count(0)
   

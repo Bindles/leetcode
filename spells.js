@@ -1,3 +1,5 @@
+var l=console.log.bind(console)
+
 function expect(val) {
   function ab() {
     console.log('hi');

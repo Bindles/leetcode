@@ -85,3 +85,87 @@ p b.bsearch_index{|n| p 'step'; n == 6}
 # key value.
 
 #reject reduce take_while drop_while chunk grep slice slice_each slice_before
+
+ax=[1,2,3,4,5,6,7,8,9,10,11]
+
+p ax.take(4)
+p ax.drop(2)
+
+
+days = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reso = 
+  days.map{|day| day.odd? ? 
+  {task: 'dishes', minutes: Random.rand(20)} :
+  {task: 'sweep', minutes: Random.rand(20)}}
+  .select{|task| task[:minutes] < 15}
+  .reject{|task| task[:minutes] < 5}
+  .reduce(0) {|sum, task| sum + task[:minutes]}
+
+p reso
+
+# Map/filter are considered inferior in Python to list comprehensions.
+#   res = [x**2 for x in range(10) if x != 5]
+
+	
+# michaelteter on Jan 4, 2023 | root | parent | next [–]
+
+# Before Ruby introduced filter_map:
+# res = (1..10).select { |x| x != 5 }.map { |x| x ** 2 }
+
+# With filter_map:
+
+# res = (1..10).filter_map { |x| x ** 2 if x != 5 }
+
+# In both cases, I think the Ruby solution is more readable.
+
+
+fma = [1,2,3,4,5,6]
+p fma.select{|x| x.even?}.map{|x| x*100}
+p fma.filter_map{ |x| x.even? && x * 100}
+p fma.filter_map{ |x| x * 100 if x.even?}
+
+result = "hello".yield_self { |str| str.upcase }
+#=> "HELLO"
+p result
+
+
+# Suppose we have a string representing a name that we want to process.
+name = "john doe"
+
+# We want to capitalize the name and split it into separate words.
+
+# Without yield_self:
+capitalized_name = name.capitalize
+words = capitalized_name.split
+p words
+
+# With yield_self:
+words = name.capitalize.yield_self { |str| str.split }
+p words
+
+nums = [1, 2, 3, 4, 5]
+arr=[10,20,30]
+
+result = nums.select { |x| x.even? && x % 4 == 0 }.join.to_i.yield_self do |selected_num|
+  arr.map { |x| x * selected_num }
+end
+
+arrtos = [1,5,8]
+arrtos.map(&:to_s)
+p arrtos.each_with_index.to_h.to_a
+p arrtos.map(&:to_s).each_with_index.to_h.to_a
+
+# Example 22: Using blocks and yielding in Ruby methods
+def execute_and_print
+  puts "Executing method"
+  yield if block_given?
+  puts "Method execution complete"
+end
+  # Calling the method with a block
+  execute_and_print { puts "Block code running" }
+  
+
+
+puts result.inspect
+
+p [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1].reverse
