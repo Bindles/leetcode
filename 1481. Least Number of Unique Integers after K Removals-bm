@@ -1,0 +1,46 @@
+#* 1481. Least Number of Unique Integers after K Removals
+require 'benchmark'
+
+# First solution with each_value
+def find_least_num_of_unique_ints_each_value(arr, k)
+  hash = arr.tally
+  count = 0
+
+  hash.each_value.sort.each do |val|
+    if k >= val
+      k -= val
+      count += 1
+    else
+      break
+    end
+  end
+
+  hash.size - count
+end
+
+# Second solution with .values
+def find_least_num_of_unique_ints_values(arr, k)
+  hash = arr.tally
+  count = 0
+
+  hash.values.sort.each do |val|
+    if k >= val
+      k -= val
+      count += 1
+    else
+      break
+    end
+  end
+
+  hash.size - count
+end
+
+# Generate array of 20,000 random integers
+arr = Array.new(200000) { rand(1..220) }
+k = 3000  # Example value for k
+
+# Benchmarking
+Benchmark.bmbm do |x|
+  x.report("each_value:") { find_least_num_of_unique_ints_each_value(arr, k) }
+  x.report(".values:") { find_least_num_of_unique_ints_values(arr, k) }
+end

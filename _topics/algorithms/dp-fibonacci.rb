@@ -15,6 +15,7 @@ def fib(n)
   end
   fib[n]
 end
+p fib(45)
 
 #* RETURN IS BLOAT | READABILITY
 def fib(n)
@@ -64,6 +65,7 @@ def fib(n, memo = {0 => 0, 1 => 1, 2 => 1})
   # Return the computed Fibonacci number for index n.
   return memo[n]
 end
+p fib(45)
 
 # # Test the function
 # puts fibonacci(5)  # Output: 5
@@ -88,9 +90,9 @@ def fibonacci(n)
 end
 
 # Test the function
-puts fibonacci(5)  # Output: 5
-puts fibonacci(10) # Output: 55
-puts fibonacci(20) # Output: 6765
+# puts fibonacci(5)  # Output: 5
+# puts fibonacci(10) # Output: 55
+# puts fibonacci(20) # Output: 6765
 
 
 def fibonacci(n)
@@ -118,10 +120,13 @@ def fibonacci(n)
   return fib[n]
 end
 
-# Test the function
-puts "Calculating Fibonacci(5)..."
-puts "Fibonacci(5): #{fibonacci(5)}"   # Output: Fibonacci(5): 5
-puts "Calculating Fibonacci(10)..."
-puts "Fibonacci(10): #{fibonacci(10)}" # Output: Fibonacci(10): 55
-puts "Calculating Fibonacci(20)..."
-puts "Fibonacci(20): #{fibonacci(20)}" # Output: Fibonacci(20): 6765
+# # Test the function
+# puts "Calculating Fibonacci(5)..."
+# puts "Fibonacci(5): #{fibonacci(5)}"   # Output: Fibonacci(5): 5
+# puts "Calculating Fibonacci(10)..."
+# puts "Fibonacci(10): #{fibonacci(10)}" # Output: Fibonacci(10): 55
+# puts "Calculating Fibonacci(20)..."
+# puts "Fibonacci(20): #{fibonacci(20)}" # Output: Fibonacci(20): 6765
+
+
+
