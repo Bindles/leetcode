@@ -1,7 +1,7 @@
 #* 890. Find and Replace Pattern
 words = ["abc","deq","mee","aqq","dkd","ccc"]
 pattern = "abb"
-#* LEARN TALLY TALLY SHORTEN TALLY CONCISE TALLY DOWN
+#* LEARN TALLY TALLY SHORTEN TALLY CONCISE TALLY DOWN TALLY INDEX TALLYINDEX
 # @param {String[]} words
 # @param {String} pattern
 # @return {String[]}

@@ -1,4 +1,5 @@
 #* 1331. Rank Transform of an Array
+#* LEARN => ARRAY COMBINE TALLY COMBINE TALLY TO_H ARRAY TO HASH
 arr = [40,10,20,30]
 # @param {Integer[]} arr
 # @return {Integer[]}
