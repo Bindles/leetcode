@@ -169,3 +169,17 @@ end
 puts result.inspect
 
 p [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1].reverse
+
+val = "hiz"
+
+if val == "hi" then puts("hello")
+else puts("right")
+end
+
+puts ( val == 'hi' ? 'hello' : 'right' )
+
+array = [1, 2, 4, 9, 10, 11, 12, 15, 16, 19, 20]
+p array.chunk_while { |i, j| i.succ == j }.to_a
+# => [[1, 2], [4], [9, 10, 11, 12], [15, 16], [19, 20]]
+
+
