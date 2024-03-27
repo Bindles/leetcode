@@ -20,10 +20,11 @@ def match_players_and_trainers(players, trainers)
 end
 p match_players_and_trainers(players, trainers)
 
+
 #* MY SOL 2 
 def match_players_and_trainers(players, trainers)
-  players.sort!.reverse!
-  trainers.sort!.reverse!
+  players.sort_by!{|x|-x}
+  trainers.sort_by!{|x|-x}
   total = 0
   while trainers.any? && players.any?
     if trainers.last >= players.last
@@ -35,4 +36,7 @@ def match_players_and_trainers(players, trainers)
   total
 end
 p match_players_and_trainers(players, trainers)
+
+
+
 
