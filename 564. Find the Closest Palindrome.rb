@@ -26,8 +26,9 @@ def nearest_palindromic(n)
     smallest_candidate = candidates.min_by { |x| x[1] }[1]
     smallest_candidate.to_s
 end
+p nearest_palindromic(n)
 
-
+p '-'
 #* CONCISE | WORKING ON THIS STILL FAILS END CASE IF BOTH DIST ARE EQUAL
 def nearest_palindromic(n)
     return (n.to_i - 1).to_s if n.length == 1
@@ -45,6 +46,7 @@ def nearest_palindromic(n)
     ]
     cands.reject{|x|x == n}.map{|x|[(n.to_i - x.to_i).abs, x.to_i] }.min_by{|val|val[0]}[1].to_s
 end
+p nearest_palindromic(n)
   
   
 #* WORKING. . .
