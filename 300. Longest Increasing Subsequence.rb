@@ -31,3 +31,15 @@ def length_of_lis(nums)
   end
   dp.max
 end
+total=12
+curr=0
+count=0
+[5,2,1].each do |n| 
+  if n+curr <= 11
+    p n
+    curr+=n
+    count+=1
+    redo
+  end
+end
+p count
