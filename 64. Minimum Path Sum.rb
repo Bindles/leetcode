@@ -19,3 +19,4 @@ def min_path_sum(grid)
   end
   dp[m - 1][n - 1]
 end
+p min_path_sum(grid)  

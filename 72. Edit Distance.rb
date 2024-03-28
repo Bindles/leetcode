@@ -1,5 +1,5 @@
 #* 72. Edit Distance
-word1 = "horse";word2 = "ros"
+word1 = "horse"; word2 = "ros"
 # @param {String} word1
 # @param {String} word2
 # @return {Integer}
@@ -23,3 +23,4 @@ def min_distance(word1, word2)
   end
   dp[n]
 end
+p min_distance(word1, word2)
