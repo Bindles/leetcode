@@ -1,9 +1,30 @@
+#* 1561. Maximum Number of Coins You Can Get
+piles = [2,4,1,2,7,8]
 # @param {Integer[]} piles
 # @return {Integer}
+#* MY SOL
+def max_coins(piles)
+  piles.sort.reverse.values_at(* (1..piles.length / 3).map { |i| i * 2 - 1 }).sum
+end
+p max_coins(piles)
+
+#* MY SOL
+def max_coins(piles)
+  piles, coins = piles.sort, 0
+  until piles.empty?
+      piles.pop 
+      coins += piles.pop 
+      piles.shift 
+  end
+  coins
+end
+p max_coins(piles)
+
+#*
 def max_coins(piles = [2,4,1,2,7,8])
   res=[]
   while piles.length > 1
-    p piles
+    #p piles
     piles.delete_at(piles.index(piles.max))
     b = piles.delete_at(piles.index(piles.max))
     piles.delete_at(piles.index(piles.min))
@@ -13,6 +34,7 @@ def max_coins(piles = [2,4,1,2,7,8])
 end
 p max_coins
 
+p '!'
 def max_coins(piles = [2,4,1,2,7,8])
   sum=0
   while piles.length > 1
@@ -38,6 +60,7 @@ def max_coins(piles = [2,4,1,2,7,8])
 end
 p max_coins
 
+#* WORKING. . .
 def max_coins(piles = [2,4,1,2,7,8])
   piles.sort!
   sum=0
