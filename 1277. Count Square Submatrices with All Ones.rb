@@ -28,17 +28,5 @@ matrix =
   end
 p count_squares(matrix)
 
-#* LIKE
-def generate(num_rows)
-  (num_rows-1).times.inject([[1]]) {|r, i| r << ([1] + r.last.each_cons(2).collect(&:sum) + [1]) }
-end
 
-
-#*
-def generate(num_rows)
-  (num_rows - 1).times.inject([[1]]) do |triangle, row_index|
-      next_row = [1] + triangle.last.each_cons(2).map(&:sum) + [1]
-      triangle << next_row
-  end
-end
 
