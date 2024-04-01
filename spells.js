@@ -53,13 +53,13 @@ function Spell(name, str, elem) {
 }
 var fireball = new Spell("the following spell has been created " + "fb",12,"fire")
 
-function Spellz(name, str, elem) {
+function Spell(name, str, elem) {
   this.name = name;
   this.str = str;
   this.elem = elem;
 }
 
-Spellz.prototype.createz = function() {
+Spellz.prototype.create = function() {
   console.log(`Spell created: ${this.name}, Strength: ${this.str}, Element: ${this.elem}`);
 };
 
@@ -67,7 +67,7 @@ Spellz.prototype.createz = function() {
 const fireballz = new Spellz("fb", 12, "fire");
 
 // Call the create method
-fireballz.createz();
+fireballz.create();
 
 
 function outerFunction() {
