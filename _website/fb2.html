@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags, CSS links, etc. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="dark:bg-gray-900">
+    <!-- Start block -->
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 antialiased">
+        <!-- Content goes here -->
+        <div class="switch-container flex justify-end mb-4">
+            <!-- Position the checkbox off-screen -->
+            <input type="checkbox" id="toggleDarkMode" style="position: absolute;" />
+            <label for="toggleDarkMode" class="flex items-center cursor-pointer">
+                <span class="mr-2 text-gray-600 dark:text-gray-400">Light</span>
+                <span class="relative">
+                    <span class="block w-10 h-6 bg-gray-300 dark:bg-gray-600 rounded-full"></span>
+                    <span class="dot absolute left-1 top-1 w-4 h-4 bg-white dark:bg-gray-400 rounded-full transition"></span>
+                </span>
+                <span class="ml-2 text-gray-600 dark:text-gray-400">Dark</span>
+            </label>
+        </div>
+    </section>
+    <!-- End block -->
+
+    <!-- JavaScript code to toggle dark mode -->
+    <script>
+        const toggleDarkMode = document.getElementById('toggleDarkMode');
+
+        toggleDarkMode.addEventListener('change', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+    </script>
+</body>
+
+</html>

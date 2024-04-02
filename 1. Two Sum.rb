@@ -1,5 +1,5 @@
 #* 1. Two Sum
-nums = [2,7,11,15]; target = 9
+nums = [1,4,6,2,7,11,15]; target = 9
 # @param {Integer[]} nums
 # @param {Integer} target
 # @return {Integer[]}
@@ -7,6 +7,7 @@ nums = [2,7,11,15]; target = 9
 def two_sum(nums, target)
   nums.each_index do |i|
     (i+1...nums.length).each do |j|
+      p nums[i..j]
       return [i,j] if nums[i] + nums[j] == target
     end
   end

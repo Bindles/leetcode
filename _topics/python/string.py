@@ -14,3 +14,9 @@ arr=[1,2,3,4]
 result = [x * 100 for x in arr if x % 2 == 0]
 
 print(result)  # Output: [4, 6]
+
+
+#* PRINT STRING IN REVERSE
+print('Hello'[::-1])
+s="Hello"
+print(s[::-1])

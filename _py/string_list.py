@@ -18,6 +18,7 @@ print(words[1:4])  # Output: ["banana", "orange", "grape"]
 print(words[:3])   # Omitting start index defaults to 0, so it includes elements from the beginning up to index 2
 print(words[2:])   # Omitting end index defaults to the length of the list, so it includes elements from index 2 to the end
 print(words[::-1]) # Reverses the list
+print("Hello"[::-1])
 
 # Adding and removing elements
 words.append("melon")     # Adds "melon" to the end of the list

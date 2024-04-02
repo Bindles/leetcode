@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+</head>
+<body>
+
+<h1>Menu</h1>
+
+<ul id="menu-list"></ul>
+
+<script>
+  // Define menu items as an array of objects
+  var menuItems = [
+    { name: "Burger", price: 10 },
+    { name: "Pizza", price: 12 },
+    { name: "Salad", price: 8 },
+    { name: "Pasta", price: 15 },
+    { name: "Smoothie", price: 6 }
+  ];
+
+  // Get the menu list element
+  var menuList = document.getElementById("menu-list");
+
+  // Iterate through the menuItems array to generate list items
+  menuItems.forEach(function(item) {
+    var listItem = document.createElement("li");
+    listItem.textContent = item.name + " - $" + item.price.toFixed(2); // Format price to 2 decimal places
+    menuList.appendChild(listItem);
+  });
+</script>
+
+<a href="#about">Go to About</a>
+<br><br><br><br><br>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente debitis ipsum reprehenderit, culpa ipsam inventore porro quibusdam tenetur non consequuntur quae dolorem velit! Explicabo provident in laudantium expedita blanditiis non.
+
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam tenetur, mollitia perferendis quod voluptas blanditiis, repellendus unde, id sed amet beatae officiis dignissimos laudantium. Non sapiente nostrum harum magni!
+</p>
+
+
+
+<br><br><br><br><br>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente debitis ipsum reprehenderit, culpa ipsam inventore porro quibusdam tenetur non consequuntur quae dolorem velit! Explicabo provident in laudantium expedita blanditiis non.
+
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam tenetur, mollitia perferendis quod voluptas blanditiis, repellendus unde, id sed amet beatae officiis dignissimos laudantium. Non sapiente nostrum harum magni!
+</p>
+
+
+
+<br><br><br><br><br>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente debitis ipsum reprehenderit, culpa ipsam inventore porro quibusdam tenetur non consequuntur quae dolorem velit! Explicabo provident in laudantium expedita blanditiis non.
+
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam tenetur, mollitia perferendis quod voluptas blanditiis, repellendus unde, id sed amet beatae officiis dignissimos laudantium. Non sapiente nostrum harum magni!
+</p>
+
+
+
+<br><br><br><br><br>
+
+<h2 id="about">About</h2>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente debitis ipsum reprehenderit, culpa ipsam inventore porro quibusdam tenetur non consequuntur quae dolorem velit! Explicabo provident in laudantium expedita blanditiis non.
+
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. A quisquam tenetur, mollitia perferendis quod voluptas blanditiis, repellendus unde, id sed amet beatae officiis dignissimos laudantium. Non sapiente nostrum harum magni!
+</p>
+
+</body>
+</html>

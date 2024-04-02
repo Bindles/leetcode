@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <style>
+    .description {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Menu</h1>
+
+<ul id="menu-list"></ul>
+
+<script>
+  // Define menu items as an array of objects
+  var menuItems = [
+    { name: "Burger", price: 10, desc: "Delicious burger with juicy beef patty and fresh vegetables." },
+    { name: "Pizza", price: 12, desc: "Classic Italian pizza with tomato sauce, mozzarella cheese, and toppings of your choice." },
+    { name: "Salad", price: 8, desc: "Fresh salad made with crisp lettuce, tomatoes, cucumbers, and a tangy vinaigrette dressing." },
+    { name: "Pasta", price: 15, desc: "Homemade pasta served with rich marinara sauce and grated parmesan cheese." },
+    { name: "Smoothie", price: 6, desc: "Refreshing smoothie made with a blend of fresh fruits and yogurt." }
+  ];
+
+  // Get the menu list element
+  var menuList = document.getElementById("menu-list");
+
+  // Iterate through the menuItems array to generate list items and descriptions
+  menuItems.forEach(function(item) {
+    var listItem = document.createElement("li");
+    listItem.textContent = item.name + " - $" + item.price.toFixed(2); // Format price to 2 decimal places
+
+    // Create description element
+    var description = document.createElement("p");
+    description.textContent = item.desc;
+    description.className = "description"; // Add class for styling
+    description.id = item.name.toLowerCase() + "-desc"; // Unique ID for each description
+
+    // Add event listener to show description when item is clicked
+    listItem.addEventListener("click", function() {
+      // Hide all descriptions first
+      document.querySelectorAll(".description").forEach(function(desc) {
+        desc.style.display = "none";
+      });
+
+      // Show description of the clicked item
+      description.style.display = "block";
+    });
+
+    menuList.appendChild(listItem);
+    menuList.appendChild(description); // Append description to the menu list
+  });
+</script>
+
+</body>
+</html>
