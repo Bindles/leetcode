@@ -1,9 +1,11 @@
+// JAVASCRIPT
 // 959. Regions Cut By Slashes.rb#* 959. Regions Cut By Slashes
 grid = [" /","/ "]
 /**
  * @param {string[]} grid
  * @return {number}
  */
+//SOL
 var regionsBySlashes = function(grid) {
     let n = grid.length * 3;
     let res = 0;
