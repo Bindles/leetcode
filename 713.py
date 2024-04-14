@@ -94,7 +94,6 @@ class Solution(object):
                 log_product -= math.log(nums[left])
                 left += 1
             result += right - left + 1
-
         return result
 print(Solution().numSubarrayProductLessThanK(nums, k))
 
