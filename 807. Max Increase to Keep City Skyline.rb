@@ -1,5 +1,7 @@
 #* 807. Max Increase to Keep City Skyline
 grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+#* LEARN => SPECIAL
+#* SPECIAL => SUM DP COUNT DP LOOP SPECIAL LOOP
 # @param {Integer[][]} grid
 # @return {Integer}
 #* SOL 1 | TRANSPOSE | SUPER PROUD OF THIS ANOTHER CHANCE TO USE TRANSPOSE
@@ -51,5 +53,8 @@ p max_increase_keeping_skyline(grid)
 
 def max_increase_keeping_skyline(grid)
   grid.sum { |row| row.min } - grid.map(&:min).sum
+end
+def max_increase_keeping_skyline(grid)
+  grid.sum { |row| row.min  - grid.map(&:min).sum}
 end
 #max_increase_keeping_skyline(grid)

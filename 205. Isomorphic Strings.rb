@@ -1,3 +1,4 @@
+#* 205. Isomorphic Strings
 # @param {String} s
 # @param {String} t
 # @return {Boolean}
