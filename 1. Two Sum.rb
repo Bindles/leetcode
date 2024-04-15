@@ -13,6 +13,7 @@ def two_sum(nums, target)
 end
 p two_sum(nums, target)
 
+
 #* MY SOL
 def two_sum(nums, target)
     nums.each_index do |i|
@@ -24,15 +25,14 @@ def two_sum(nums, target)
 end
 p two_sum(nums, target)
 
-#*
+#* MUCH FASTER 40x
 def two_sum(nums, target)
   num_indices = {}
-
   nums.each_with_index do |num, i|
-      compliment = target - num
-      # Check if the compliment is already in the map
-      if num_indices.key?(compliment)
-          return [num_indices[compliment], i]
+      diff = target - num
+      # Check if the diff is already in the map
+      if num_indices.key?(diff)
+          return [num_indices[diff], i]
       end
       # Add the current number and its index to the map
       num_indices[num] = i
@@ -42,8 +42,8 @@ p two_sum(nums,target)
 
 #*
 def two_sum(nums, target)
-  nums.each_with_index do |el, i|
-      other = nums.slice((i + 1 )..-1).find_index(target - el)
+  nums.each_with_index do |elem, i|
+      other = nums.slice((i + 1 )..-1).find_index(target - elem)
       return [i, other + i + 1] if other # actual index is offset
   end
   return nil
