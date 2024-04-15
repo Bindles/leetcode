@@ -20,7 +20,6 @@ impl Solution {
 let result_fast = Solution::two_sum(nums.clone(), target);
 println!("FAST: {:?}", result_fast);
 
-
 //ORIG
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
