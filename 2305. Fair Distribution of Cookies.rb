@@ -3,7 +3,7 @@ cookies = [8,15,10,20,8]; k = 2
 # @param {Integer[]} cookies
 # @param {Integer} k
 # @return {Integer}
-#*
+#* GOOD SOL
 def distribute_cookies(cookies, k)
   cookie_distribution = Set.new([Array.new(k, 0)]) 
 
