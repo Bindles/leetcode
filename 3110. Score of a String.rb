@@ -2,7 +2,7 @@
  s = "hello"
 # @param {String} s
 # @return {Integer}
-#* PUTS | SOL BELOW
+#* PUTS | SOLUTION BELOW
 def score_of_string(s)
     s.chars.each_cons(2).each do |x|
         p x
