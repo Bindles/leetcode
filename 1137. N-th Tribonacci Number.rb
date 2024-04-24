@@ -21,6 +21,11 @@ def tribonacci(n)
 end
 p tribonacci(n)
 
+a,b,c=0,1,1
+
+for x in range(0, n-2):
+  a,b,c = b,c,a+b+c
+
 #*
 def tribonacci(n)
     t = [0, 1, 1]
