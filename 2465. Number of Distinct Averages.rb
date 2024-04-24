@@ -14,11 +14,8 @@ p distinct_averages(nums)
 #*
 def distinct_averages(nums)
   res=[]
-  p nums
     until nums.empty?
       p "#{nums.min} #{nums.max}"
-      p "#{nums.min * nums.max}"
-
       res << ((nums.min + nums.max) / 2.0)
         nums.delete_at(nums.index(nums.min))
         nums.delete_at(nums.index(nums.max))
