@@ -103,7 +103,6 @@ def find_rotate_steps(ring, key)
     dict[[row, col]] = [count1 + dfs.call(i, col + 1), count2 + dfs.call(j, col + 1)].min
     dict[[row, col]]
   end
-
   dfs.(0, 0)
 end
 p find_rotate_steps(ring, key)
