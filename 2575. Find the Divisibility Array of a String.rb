@@ -17,3 +17,18 @@ def divisibility_array(word, m)
   result
 end
 p divisibility_array(word, m)
+
+#* MISC
+# width
+# height
+
+# w h
+# x,y
+# w,h
+
+# [w, h]
+# top right
+# [400, 1]
+
+# bottom right
+# [400,400]
