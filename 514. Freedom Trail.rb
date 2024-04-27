@@ -105,4 +105,5 @@ def find_rotate_steps(ring, key)
   end
   dfs.(0, 0)
 end
+
 p find_rotate_steps(ring, key)
