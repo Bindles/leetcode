@@ -57,3 +57,4 @@ puts distribute_cookies(cookies, k)
 
 
 # l.count(0) > cookies.length - j ? (return Float::INFINITY) : (return l.max)
+
