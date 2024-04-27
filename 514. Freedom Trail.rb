@@ -104,6 +104,6 @@ def find_rotate_steps(ring, key)
     dict[[row, col]]
   end
 
-  dfs.call(0, 0)
+  dfs.(0, 0)
 end
 p find_rotate_steps(ring, key)
