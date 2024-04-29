@@ -60,3 +60,14 @@ console.log(sum(1, 2, 3, 4, 5)); // Output: 15
 
 // In summary, while the for...of loop is often the most appropriate choice for iterating over iterable objects in JavaScript, there are some cases where built-in methods like forEach() or reduce() provide more concise or powerful alternatives.
 
+
+
+const numbers = [10, 20, 30, 40, 50];
+
+for (const num of numbers.entries()) {
+  console.log(num);
+}
+
+for (const [index, value] of numbers.entries()) {
+    console.log(`Index: ${index}, Value: ${value}`);
+}
